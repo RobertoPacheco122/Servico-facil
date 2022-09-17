@@ -1,0 +1,29 @@
+.header {
+    border-bottom: 1px solid black;
+}
+
+.header--container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 5%;
+}
+
+.header--container--logo {
+    
+}
+
+.header__logo {
+    width: 60px;
+    height: 60px;
+}
+
+.header__list{
+    display: flex;
+    gap: 2rem;
+}
+
+.header__link {
+    text-decoration: none;
+    color: black;
+}
