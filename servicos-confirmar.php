@@ -1,9 +1,7 @@
 <?php 
     include "Usuario.class.php"; 
     include "Servico.class.php"; 
-
-    $user1 = new Usuario("Thiago","Policarpo", "tpoli@gmail.com",12345678);
-    $servico1 = new Servico("hidraulico","desentupimento de teto",385.59);
+    include "Prestador.class.php";
 ?>
 
 <!DOCTYPE html>
@@ -16,8 +14,7 @@
     </head>
     <body>
         <?php
-        var_dump($user1);
-        var_dump($servico1);
-    ?>
+        
+        ?>
 </body>
 </html>
