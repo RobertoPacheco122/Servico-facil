@@ -1,7 +1,8 @@
-<?php 
-    include "Usuario.class.php"; 
-    include "Servico.class.php"; 
-    include "Prestador.class.php";
+<?php
+    include "entities/Servicos.class.php";
+    include "entities/Servico.class.php";
+
+    $servico = $_REQUEST["servicos"];
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@
     </head>
     <body>
         <?php
-        
+          
         ?>
 </body>
 </html>
