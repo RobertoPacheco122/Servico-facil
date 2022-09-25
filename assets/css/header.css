@@ -1,16 +1,11 @@
 .header {
-    border-bottom: 1px solid black;
+    padding: 1rem 0;
 }
 
 .header--container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 5%;
-}
-
-.header--container--logo {
-    
 }
 
 .header__logo {
@@ -26,4 +21,5 @@
 .header__link {
     text-decoration: none;
     color: black;
+    font-weight: 600;
 }
