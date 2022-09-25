@@ -1,0 +1,27 @@
+.error {
+    padding: 5rem 0;
+}
+
+.error--container {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+.error__img {
+    opacity: 40%;
+    margin: 2rem auto;
+    width: 60%;
+}
+
+.error__title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--g3);
+}
+
+.error__text {
+    font-size: 1.5rem;
+    color: var(--g2);
+}
