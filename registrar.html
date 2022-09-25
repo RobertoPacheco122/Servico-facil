@@ -16,13 +16,13 @@
     <header class="header">
         <div class="header--container container-2">
             <div class="header--container--logo">
-                <img src="./assets/img/pacote.png" alt="Logo Serviço Fácil" class="header__logo">
+                <a href="registrar.html" class="header__link"> <img src="./assets/img/pacote.png" alt="Logo Serviço Fácil" class="header__logo"></a> 
             </div>
             <div class="header--container--content">
                 <ul class="header__list">
-                    <li class="header__item"><a href="error.html" class="header__link">Início</a></li>
+                    <li class="header__item"><a href="registrar.html" class="header__link">Início</a></li>
                     <li class="header__item"><a href="registrar.html" class="header__link">Registrar-se</a></li>
-                    <li class="header__item"><a href="error.html" class="header__link">Entrar</a></li>
+                    <li class="header__item"><a href="logar.php" class="header__link">Entrar</a></li>
                 </ul>
             </div>
         </div>
@@ -49,22 +49,22 @@
                         <span class="register__user">Prestador de Serviço</span>
                     </div>
 
-                    <form class="register__form" action="servicos.php" method="post">
+                    <form class="register__form" action="Confirmacao.php" method="post">
                         <div class="register--container--name">
                             <label class="register__label" for="name-input">Nome</label>
-                            <input class="register__input" type="text" name="name" id="name-input">
+                            <input required class="register__input" type="text" name="name" id="name-input">
                         </div>
                         <div class="register--container--lastname">
                             <label class="register__label" for="lastname-input">Sobrenome</label>
-                            <input class="register__input" type="text" name="lastname" id="lastname-input">
+                            <input required class="register__input" type="text" name="lastname" id="lastname-input">
                         </div>
                         <div class="register--container--email">
                             <label class="register__label" for="email-input">Email</label>
-                            <input class="register__input" type="email" name="email" id="email-input">
+                            <input required class="register__input" type="email" name="email" id="email-input">
                         </div>                       
                         <div class="register--container--password">
                             <label class="register__label" for="email-password">Senha</label>
-                            <input class="register__input" type="password" name="password" id="email-password">
+                            <input required class="register__input" type="password" name="password" id="email-password">
                         </div>   
                         <div class="register--container--terms">
                             <input class="register__input--checkbox" type="checkbox" name="terms" id="terms-input">
@@ -73,7 +73,7 @@
                             <label class="register__label--checkbox" for="news-input">Gostaria de receber notificações e atualizações sobre oferta de serviços e promoções através do e-mail</label>
                         </div>
                         <input class="button__input" type="submit" value="Registrar-se" id="button-input">
-                        <span class="register__span">Já possui uma conta ? <a href="#" class="register__link">Entre aqui</a></span>
+                        <span class="register__span">Já possui uma conta ? <a href="logar.php" class="register__link">Entre aqui</a></span>
                     </form>
                 </div>
             </div>
