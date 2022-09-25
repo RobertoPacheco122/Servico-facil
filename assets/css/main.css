@@ -1,6 +1,0 @@
-.main {
-    display: grid;
-    grid-template-columns: 1fr .6fr;
-
-    height: calc(100vh - 5.2rem) ;
-}
