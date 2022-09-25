@@ -1,0 +1,29 @@
+.call {
+    background-color: #062d72;
+    color: #FFFFFF;
+}
+
+.call--container {
+    padding: 5rem 8rem 5rem 5rem;
+}
+
+.call--container--company {
+    margin-bottom: 4rem;
+}
+
+.call__name--company {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.call__title {
+    font-size: 6.5rem;
+    font-weight: 500;
+    margin-bottom: 3rem;
+}
+
+.call--container--description {
+    max-width: 60%;
+    line-height: 1.5rem;
+}
