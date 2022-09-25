@@ -1,0 +1,92 @@
+.register {
+    align-self: center;
+}
+
+.register__title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.register--container--user {
+    text-align: center;
+}
+
+.register__user {
+    display: inline-block;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.register__user:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.register__form {
+    padding: 0 9rem;
+}
+
+.register--container--email, .register--container--password, .register--container--name, .register--container--lastname {
+    margin-bottom: 2rem;
+}
+
+.register__label {
+    display: block;
+    margin-bottom: .7rem;
+    color: rgb(74, 75, 75);
+}
+
+.register__input {
+    border: none;
+    border-bottom: 1px solid rgb(207, 205, 205);
+    outline: none;
+    width: 100%;
+    padding: .2rem;
+    font-size: 1.1rem;
+}
+
+.button__input {
+    width: 100%;
+    color: #FFFFFF;
+    background-color: #062d72;
+    border: none;
+    border-radius: 7px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.button__input:hover {
+    cursor: pointer;
+}
+
+.register--container--terms {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+}
+
+.register__input--checkbox {
+    width: 25px;
+    height: 25px;
+    align-self: stretch;
+}
+
+.register__terms {
+    color: #0957dd;
+}
+
+.register__span {
+    display: block;
+    text-align: center;
+    font-size: .7rem;
+}
+
+.register__link {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
