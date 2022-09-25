@@ -1,0 +1,35 @@
+.icon--lime {
+    background-image: url("../img/icons/lima.png");
+}
+
+.icon--keychain {
+    background-image: url("../img/icons/chaveiro.png");
+}
+
+.icon--pipe {
+    background-image: url("../img/icons/vazamento.png");
+}
+
+.icon--circuit {
+    background-image: url("../img/icons/circuito-eletrico.png");
+}
+
+.icon--airconditioning {
+    background-image: url("../img/icons/ar-condicionado.png");
+}
+
+.icon--facebook {
+    background-image: url("../img/icons/facebook.svg");
+}
+
+.icon--instagram {
+    background-image: url("../img/icons/instagram.svg");
+}
+
+.icon--twitter {
+    background-image: url("../img/icons/twitter.svg");
+}
+
+.icon--sadface {
+    background-image: url("../img/icons/sadface.svg");
+}
