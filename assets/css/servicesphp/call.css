@@ -1,0 +1,38 @@
+.call {
+    padding: 3rem 0;
+}
+
+.call--container {
+    display: grid;
+    grid-template-columns: 1fr .8fr;
+    align-items: center;
+}
+
+.call__title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.call__subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.call__img {
+    max-width: 100%;
+}
+
+.call__item {
+    display: grid;
+
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.call__icon {
+    margin-right: 1rem;
+    width: 30px;
+    height: 30px;
+}
