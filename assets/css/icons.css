@@ -33,3 +33,15 @@
 .icon--sadface {
     background-image: url("../img/icons/sadface.svg");
 }
+
+.icon--shield {
+    background-image: url("../img/icons/escudo.svg");
+}
+
+.icon--money {
+    background-image: url("../img/icons/saco-dinheiro.svg");
+}
+
+.icon--star {
+    background-image: url("../img/icons/estrela.svg");
+}
