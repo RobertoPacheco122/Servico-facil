@@ -20,8 +20,8 @@
             </div>
             <div class="header--container--content">
                 <ul class="header__list">
-                    <li class="header__item"><a href="registrar.html" class="header__link">Início</a></li>
-                    <li class="header__item"><a href="registrar.html" class="header__link">Registrar-se</a></li>
+                    <li class="header__item"><a href="registrar.php" class="header__link">Início</a></li>
+                    <li class="header__item"><a href="registrar.php" class="header__link">Registrar-se</a></li>
                     <li class="header__item"><a href="logar.php" class="header__link">Entrar</a></li>
                 </ul>
             </div>
