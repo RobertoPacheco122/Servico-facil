@@ -1,5 +1,7 @@
 <?php
     include "entities/Servico.class.php";
+    include "./assets/scripts/php/createHeader.php";
+    include "./assets/scripts/php/createFooter.php";
 
     $servico0 = new Servico("default","Selecione um tipo de serviço",0);
     $servico1 = new Servico("Eletricista","Reparo da rede elétrica",99.99);
@@ -28,20 +30,10 @@
     <link rel="stylesheet" href="assets/css/servicesphp/style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="header--container container-3">
-            <div class="header--container--logo">
-                <img src="./assets/img/pacote.png" alt="Logo Serviço Fácil" class="header__logo">
-            </div>
-            <div class="header--container--content">
-                <ul class="header__list">
-                    <li class="header__item"><a href="error.html" class="header__link">Início</a></li>
-                    <li class="header__item"><a href="registrar.html" class="header__link">Registrar-se</a></li>
-                    <li class="header__item"><a href="error.html" class="header__link">Entrar</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+    <?php
+        echo createHeader();
+    ?>    
+
     <section class="call">
         <div class="call--container container-3">
             <div class="call--container--content">
@@ -90,81 +82,9 @@
             </form>
         </div>
     </section>
-    <footer class="footer">
-        <div class="footer--container container-3">
-            <header class="footer__header">
-                <img src="./assets/img/pacote.png" class="footer__logo" alt="Logo do Serviço Fácil">
-            </header>
-            <section class="footer--container--content">
-                <div class="footer__about footer__about--empresa">
-                    <h1 class="footer__title footer__title--company">Empresa</h1>
-                    <nav class="footer__nav">
-                        <a href="error.html" class="footer__link">Sobre</a>
-                        <a href="error.html" class="footer__link">Empregos</a>
-                    </nav>
-                </div>
-                <div class="footer__about footer__about--communities">
-                    <h1 class="footer__title footer__title--communities">Comunidades</h1>
-                    <nav class="footer__nav">
-                        <a href="error.html" class="footer__link">Para Artistas</a>
-                        <a href="error.html" class="footer__link">Desenvolvedores</a>
-                        <a href="error.html" class="footer__link">Publicidade</a>
-                        <a href="error.html" class="footer__link">Investidores</a>
-                    </nav>
-                </div>
-                <div class="footer__about footer__about--links">
-                    <h1 class="footer__title footer__title--links">Links úteis</h1>
-                    <nav class="footer__nav">
-                        <a href="error.html" class="footer__link">Suporte</a>
-                        <a href="error.html" class="footer__link">Aplicativo móvel grátis</a>
-                    </nav>
-                </div>
-            </section>
-            <section class="footer--container--medias">
-                <ul class="footer__list--socials">
-                    <li class="footer__item--socials footer__item--instagram">
-                        <a href="#" class="footer__link--socials footer__link--instagram">
-                            <i class="footer__icon icon icon--instagram"></i>
-                        </a>
-                    </li>
-                    <li class="footer__item--socials footer__item--twitter">
-                        <a href="#" class="footer__link--socials footer__link--twitter">
-                            <i class="footer__icon icon icon--twitter"></i>
-                        </a>
-                    </li>
-                    <li class="footer__item--socials footer__item--facebook">
-                        <a href="#" class="footer__link--socials footer__link--facebook">
-                            <i class="footer__icon icon icon--facebook"></i>
-                        </a>
-                    </li>
-                </ul>
-            </section>
-            <section class="footer--container--country">
-                <p class="footer__text footer__text--country">&#127758; Brasil</p>
-            </section>
-            <section class="footer--container--infos">
-                <ul class="footer__list--infos">
-                    <li class="footer__item--infos">
-                        <a href="error.html" class="footer__link footer__link--infos">Legal</a>
-                    </li>
-                    <li class="footer__item--infos">
-                        <a href="error.html" class="footer__link footer__link--infos">Centro de Privacidade</a>
-                    </li>
-                    <li class="footer__item--infos">
-                        <a href="error.html" class="footer__link footer__link--infos">Política de Privacidade</a>
-                    </li>
-                    <li class="footer__item--infos">
-                        <a href="error.html" class="footer__link footer__link--infos">Cookies</a>
-                    </li>
-                    <li class="footer__item--infos">
-                        <a href="error.html" class="footer__link footer__link--infos">Sobre Anúncios</a>
-                    </li>
-                </ul>
-                <div class="footer--container--rights">
-                    <p class="footer__text footer__text--rights">&copy; 2022 Serviço Fácil</p>
-                </div>
-            </section>
-        </div>
-    </footer>
+
+    <?php
+        echo createHeader();
+    ?>
 </body>
 </html>
