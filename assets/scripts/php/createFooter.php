@@ -1,5 +1,5 @@
 <?php
-    function criarRodape(){
+    function createFooter(){
         return "
             <footer class='footer'>
                 <div class='footer--container container-3'>
@@ -10,41 +10,41 @@
                         <div class='footer__about footer__about--empresa'>
                             <h1 class='footer__title footer__title--company'>Empresa</h1>
                             <nav class='footer__nav'>
-                                <a href='#' class='footer__link'>Sobre</a>
-                                <a href='#' class='footer__link'>Empregos</a>
+                                <a href='error.php' class='footer__link'>Sobre</a>
+                                <a href='error.php' class='footer__link'>Empregos</a>
                             </nav>
                         </div>
                         <div class='footer__about footer__about--communities'>
                             <h1 class='footer__title footer__title--communities'>Comunidades</h1>
                             <nav class='footer__nav'>
-                                <a href='#' class='footer__link'>Para Artistas</a>
-                                <a href='#' class='footer__link'>Desenvolvedores</a>
-                                <a href='#' class='footer__link'>Publicidade</a>
-                                <a href='#' class='footer__link'>Investidores</a>
+                                <a href='error.php' class='footer__link'>Para Artistas</a>
+                                <a href='error.php' class='footer__link'>Desenvolvedores</a>
+                                <a href='error.php' class='footer__link'>Publicidade</a>
+                                <a href='error.php' class='footer__link'>Investidores</a>
                             </nav>
                         </div>
                         <div class='footer__about footer__about--links'>
                             <h1 class='footer__title footer__title--links'>Links úteis</h1>
                             <nav class='footer__nav'>
-                                <a href='#' class='footer__link'>Suporte</a>
-                                <a href='#' class='footer__link'>Aplicativo móvel grátis</a>
+                                <a href='error.php' class='footer__link'>Suporte</a>
+                                <a href='error.php' class='footer__link'>Aplicativo móvel grátis</a>
                             </nav>
                         </div>
                     </section>
                     <section class='footer--container--medias'>
                         <ul class='footer__list--socials'>
                             <li class='footer__item--socials footer__item--instagram'>
-                                <a href='#' class='footer__link--socials footer__link--instagram'>
+                                <a href='error.php' class='footer__link--socials footer__link--instagram'>
                                     <i class='footer__icon icon icon--instagram'></i>
                                 </a>
                             </li>
                             <li class='footer__item--socials footer__item--twitter'>
-                                <a href='#' class='footer__link--socials footer__link--twitter'>
+                                <a href='error.php' class='footer__link--socials footer__link--twitter'>
                                     <i class='footer__icon icon icon--twitter'></i>
                                 </a>
                             </li>
                             <li class='footer__item--socials footer__item--facebook'>
-                                <a href='#' class='footer__link--socials footer__link--facebook'>
+                                <a href='error.php' class='footer__link--socials footer__link--facebook'>
                                     <i class='footer__icon icon icon--facebook'></i>
                                 </a>
                             </li>
@@ -56,19 +56,19 @@
                     <section class='footer--container--infos'>
                         <ul class='footer__list--infos'>
                             <li class='footer__item--infos'>
-                                <a href='#' class='footer__link footer__link--infos'>Legal</a>
+                                <a href='error.php' class='footer__link footer__link--infos'>Legal</a>
                             </li>
                             <li class='footer__item--infos'>
-                                <a href='#' class='footer__link footer__link--infos'>Centro de Privacidade</a>
+                                <a href='error.php' class='footer__link footer__link--infos'>Centro de Privacidade</a>
                             </li>
                             <li class='footer__item--infos'>
-                                <a href='#' class='footer__link footer__link--infos'>Política de Privacidade</a>
+                                <a href='error.php' class='footer__link footer__link--infos'>Política de Privacidade</a>
                             </li>
                             <li class='footer__item--infos'>
-                                <a href='#' class='footer__link footer__link--infos'>Cookies</a>
+                                <a href='error.php' class='footer__link footer__link--infos'>Cookies</a>
                             </li>
                             <li class='footer__item--infos'>
-                                <a href='#' class='footer__link footer__link--infos'>Sobre Anúncios</a>
+                                <a href='error.php' class='footer__link footer__link--infos'>Sobre Anúncios</a>
                             </li>
                         </ul>
                         <div class='footer--container--rights'>
