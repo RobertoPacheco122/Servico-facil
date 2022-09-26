@@ -26,8 +26,8 @@
         <section class="call">
             <div class="call--container">
                 <div class="call--container--company">
-                    <h1 class="call__name--company">Lorem Ipsum</h1>
-                    <h2 class="call__title"><!-- Concentre-se apenas no trabalho importante --> Lorem ipsum dolor sit amet, consectetur adipiscing </h2>
+                    <h1 class="call__name--company">Serviço Fácil</h1>
+                    <h2 class="call__title">Concentre-se apenas no trabalho importante</h2>
                 </div>
                 <div class="call--container--description">
                     <p class="call__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis orci vitae suscipit lobortis. Etiam quis eleifend neque. Sed interdum tempor enim vitae scelerisque. Vivamus consequat est et nisi elementum varius. Cras et condimentum metus, id pretium risus. Vestibulum porttitor gravida justo et congue. Nunc nec posuere leo, eu faucibus sapien.</p>
