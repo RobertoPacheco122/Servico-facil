@@ -4,7 +4,9 @@
             <footer class='footer'>
                 <div class='footer--container container-3'>
                     <header class='footer__header'>
-                        <img src='./assets/img/pacote.png' class='footer__logo' alt='Logo do Serviço Fácil'>
+                        <a href='servicos.php' class='footer__link'>
+                            <img src='./assets/img/pacote.png' class='footer__logo' alt='Logo do Serviço Fácil'>
+                        </a>
                     </header>
                     <section class='footer--container--content'>
                         <div class='footer__about footer__about--empresa'>
