@@ -2,19 +2,13 @@
     include "entities/Servico.class.php";
     include "./assets/scripts/php/createHeader.php";
     include "./assets/scripts/php/createFooter.php";
+    include "./assets/scripts/php/showSerivce.php";
 
     $servico0 = new Servico("default","Selecione um tipo de serviço",0);
     $servico1 = new Servico("Eletricista","Reparo da rede elétrica",99.99);
     $servico2 = new Servico("Eletricista","Instalar aterramento",85.59);
     $servico3 = new Servico("Eletricista","Fazer gato de energia",85.59);
     $servicosEletricista = array($servico0,$servico1,$servico2,$servico3);
- 
-    function exibirServicos($servicos) {
-        for ($i = 0; $i <count($servicos); $i++) {
-            echo "<option value='$i'>".$servicos[$i]->getServico()."</option>";
-        }
-    }
-
 ?>
 
 
@@ -65,7 +59,7 @@
             <form action="servicos-confirmar.php" method="post" class="services__form">
                 <select name="servicos" id="servicos" class="services__select">
                     <?php
-                        exibirServicos($servicosEletricista);
+                        showServices($servicosEletricista);
                     ?>
                 </select>
                 <div class="services--container--date">
