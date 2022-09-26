@@ -54,7 +54,8 @@
             <div class="error--container container-3">
                 <img src="./assets/img/like.png" alt="Parede de tijolos" class="error__img">
                 <h1 class="error__title">Obrigado por se Registrar!</h1>
-                <p class="error__text">Confira sua caixa de e-mails para validar sua conta.</p>
+                <p class="error__text">Confira a caixa de e-mail para validar sua conta.</p>
+                <a href="./logar.php" class="error__link">Fazer login</a>
             </div>
         </section>
     </main>
