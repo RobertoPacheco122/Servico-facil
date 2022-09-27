@@ -12,6 +12,7 @@
                         <ul class='header__list'>
                             <li class='header__item'><a href='error.php' class='header__link'>Início</a></li>
                             <li class='header__item'><a href='servicos.php' class='header__link'>Serviços</a></li>
+                            <li class='header__item'><a href='servicos-status.php' class='header__link'>Status</a></li>
                             <li class='header__item'><a href='registrar.php' class='header__link'>Registrar-se</a></li>
                             <li class='header__item'><a href='logar.php' class='header__link'>Entrar</a></li>
                         </ul>
