@@ -32,3 +32,9 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+@media screen and (max-width: 1900px) {
+    .container-3 {
+        padding: 0 10rem;
+    }
+}
