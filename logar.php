@@ -30,7 +30,7 @@
                     <h2 class="call__title">Concentre-se apenas no trabalho importante</h2>
                 </div>
                 <div class="call--container--description">
-                    <p class="call__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis orci vitae suscipit lobortis. Etiam quis eleifend neque. Sed interdum tempor enim vitae scelerisque. Vivamus consequat est et nisi elementum varius. Cras et condimentum metus, id pretium risus. Vestibulum porttitor gravida justo et congue. Nunc nec posuere leo, eu faucibus sapien.</p>
+                    <p class="call__description">O Serviço Fácil chegou para facilitar a busca por prestadores de serviços no Brasil. Chega de solicitar orçamentos e aguardar uma resposta. Chega de pagar para simplesmente conseguir o contato de um prestador de serviços. Em nosso sistema você digita, encontra e já sai conversando com os prestadores de serviços.</p>
                 </div>                
             </div>
         </section>

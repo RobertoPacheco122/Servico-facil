@@ -23,8 +23,8 @@
         <section class="call">
             <div class="call--container container-3">
                 <div class="call--container--content">
-                    <h1 class="call__title">Lorem ipsum dolor sit amet, adipiscing elit.</h1>
-                    <p class="call__subtitle">Lorem ipsum dolor sit amet, consectetur</p>
+                    <h1 class="call__title">Buscando por profissionais dos mais variados campos ?</h1>
+                    <p class="call__subtitle">Nós reunimos todos eles em um só lugar</p>
                     <form action="error.php" method="get" class="call__form">
                         <input type="text" placeholder="Procure pelo serviço ideal" class="call__input call__input--text">
                         <input type="submit" value="Buscar" class="call__input call__input--submit">
