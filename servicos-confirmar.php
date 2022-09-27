@@ -28,7 +28,7 @@
                 <div class="confirm--container container-3">
                     <div class="confirm--container--image">
                         <img src="./assets/img/confirmar-servico1.png" alt="" class="confirm__img">
-                        <h1 class="confirm__title">Pedido realizado com sucesso!</h1>
+                        <h1 class="confirm__title">Falta pouco!</h1>
                         <p class="confirm__text">Revise os dados antes de confirmar a solicitação.</p>
                     </div>
                     <div class="confirm--container--content">
@@ -38,7 +38,7 @@
                         <p class="confirm__service"><span class="confirm__data">Crédito :</span> R$10.00</p>
                         <p class="confirm__service"><span class="confirm__data">Valor total:</span> R$75.59</p>
 
-                        <a href="#" class="confirm__link">Confirmar pedido</a>
+                        <a href="confirmar-pedido.php" class="confirm__link">Confirmar pedido</a>
                     </div>
                 </div>
             </section>
