@@ -1,6 +1,20 @@
 <?php
     include "./assets/scripts/php/createHeader.php";
     include "./assets/scripts/php/createFooter.php";
+    include("./entities/Database.class.php");
+    include("./entities/Cliente.class.php");
+
+    function getRegistrationData(){
+        $nome = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
+        $lastname = filter_input(INPUT_POST, "lastname", FILTER_SANITIZE_STRING);
+        $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_STRING);
+        $senha = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
+        $cliente = new Cliente($nome, $lastname, $email, $senha);
+
+        return $cliente;
+    }
+
+    $db = Database::addClient(getRegistrationData());
 
     $email = $_POST['email'];
 
@@ -18,7 +32,7 @@
     //Este sempre deverá existir para garantir a exibição correta dos caracteres
     $headers  = "MIME-Version: 1.0\n";
     $headers .= "Content-type: text/html; charset=iso-8859-1\n";
-    $headers .= "From: Serviço Fácil <ServicoFacil@EsayService.com>";
+    $headers .= "From: Serviço Fácil <ServicoFacil@EasyService.com>";
 
     //Enviar
     mail($destino, $assunto, $arquivo, $headers);
