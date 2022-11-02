@@ -1,4 +1,6 @@
 <?php
+    include("./entities/Usuario.class.php");
+
     class Prestador extends Usuario {
         private $tipoServico;
 
