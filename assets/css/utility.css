@@ -33,6 +33,14 @@ body {
     background-size: cover;
 }
 
+.hidden {
+    display: none;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
 @media screen and (max-width: 1900px) {
     .container-3 {
         padding: 0 10rem;
