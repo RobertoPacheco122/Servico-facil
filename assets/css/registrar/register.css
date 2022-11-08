@@ -28,8 +28,16 @@
     padding: 0 9rem;
 }
 
-.register--container--email, .register--container--password, .register--container--name, .register--container--lastname {
+.register--container--email, .register--container--password, .register--container--name, .register--container--lastname, .register--container--service {
     margin-bottom: 2rem;
+}
+
+.register__select {
+    padding: .6rem;
+    border: 1px solid rgb(207, 205, 205);
+    color: rgb(74, 75, 75);
+    border-radius: .3rem;
+    width: 100%;
 }
 
 .register__label {
