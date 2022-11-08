@@ -2,19 +2,30 @@
     include "./assets/scripts/php/createHeader.php";
     include "./assets/scripts/php/createFooter.php";
     include("./entities/Database.class.php");
-    include("./entities/Cliente.class.php");
+    //include("./entities/Cliente.class.php");
+    include("./entities/Usuario.class.php");
 
-    function getRegistrationData(){
+    function getRegisterData(){
         $nome = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
         $lastname = filter_input(INPUT_POST, "lastname", FILTER_SANITIZE_STRING);
         $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_STRING);
         $senha = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
-        $cliente = new Cliente($nome, $lastname, $email, $senha);
+        $servico = $_POST["service"];
 
-        return $cliente;
+        if($servico == null) {
+            $user = new Cliente($nome, $lastname, $email, $senha);
+        } else {
+            $user = new Prestador($nome, $lastname, $email, $senha);
+            $user->setTipoServico($servico);
+        }
+
+        return $user;
     }
 
-    $db = Database::addClient(getRegistrationData());
+
+    var_dump(getRegisterData());
+
+    //$db = Database::addUser(getRegistrationData());
 
     $email = $_POST['email'];
 
