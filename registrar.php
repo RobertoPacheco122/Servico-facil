@@ -39,12 +39,12 @@
                 <div class="register--container--form">
                     <h1 class="register__title">Registre-se</h1>
                     <div class="register--container--user">
-                        <span class="register__user">Usuário</span>
+                        <span class="register__user" id="client--button">Sou Cliente</span>
                         <span class="register__pipe">|</span>
-                        <span class="register__user">Prestador de Serviço</span>
+                        <span class="register__user" id="provider--button">Sou Prestador de Serviços</span>
                     </div>
 
-                    <form class="register__form" action="Confirmacao.php" method="post">
+                    <form class="register__form" id="register__form--client" action="Confirmacao.php" method="post">
                         <div class="register--container--name">
                             <label class="register__label" for="name-input">Nome</label>
                             <input required class="register__input" type="text" name="name" id="name-input">
@@ -70,11 +70,45 @@
                         <input class="button__input" type="submit" value="Registrar-se" id="button-input">
                         <span class="register__span">Já possui uma conta ? <a href="logar.php" class="register__link">Entre aqui</a></span>
                     </form>
+
+                    <form class="register__form hidden" id="register__form--provider" action="Confirmacao.php" method="post">
+                        <div class="register--container--name">
+                            <label class="register__label" for="name-input">Nome</label>
+                            <input required class="register__input" type="text" name="name" id="name-input-provider">
+                        </div>
+                        <div class="register--container--lastname">
+                            <label class="register__label" for="lastname-input">Sobrenome</label>
+                            <input required class="register__input" type="text" name="lastname" id="lastname-input-provider">
+                        </div>
+                        <div class="register--container--email">
+                            <label class="register__label" for="email-input">Email</label>
+                            <input required class="register__input" type="email" name="email" id="email-input-provider">
+                        </div>                       
+                        <div class="register--container--password">
+                            <label class="register__label" for="email-password">Senha</label>
+                            <input required class="register__input" type="password" name="password" id="email-password-provider">
+                        </div>
+                        <div class="register--container--service">
+                            <label for="service" class="register__label">Escolha o seu tipo de serviço</label>
+                            <select title="Serviço" name="service" id="service" class="register__select">
+                                <option value="0" class="register__option">Selecione uma opção</option>
+                                <option value="1" class="register__option">Bombeiro Hidráulico</option>
+                                <option value="2" class="register__option">Marido de aluguel</option>
+                                <option value="3" class="register__option">Assasino de alguel</option>
+                            </select>
+                        </div> 
+                        <div class="register--container--terms">
+                            <input class="register__input--checkbox" type="checkbox" name="terms" id="terms-input-provider">
+                            <label class="register__label--checkbox" for="terms-input">Concordo com os <span class="register__terms">Termos de Serviço</span></label>
+                        </div>
+                        <input class="button__input" type="submit" value="Registrar-se" id="button-input-provider">
+                        <span class="register__span">Já possui uma conta ? <a href="logar.php" class="register__link">Entre aqui</a></span>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <script src="./assets/js/index.js"></script>
+    <script src="./assets/scripts/js/index.js"></script>
 </body>
 </html>
