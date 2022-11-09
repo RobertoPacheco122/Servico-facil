@@ -60,8 +60,13 @@
             return $clientLastname[0];
         }
 
-        //public static function authenticateEmail($email){}
-        //public static function authenticatePassword($password){}
-        //public static function authenticateUser($email, $senha){}
+        public static function authenticateUser($email, $senha){
+            $database = Database::getConnection();
+            $statement = $database->prepare("SELECT email, senha FROM Clientes WHERE email = :email AND senha = :senha");
+            $status = $statement->execute([":email" => $email, ":senha" => $senha]);
+            $query = $statement->fetch();
+
+            return $query;
+        }
     }
 ?>
