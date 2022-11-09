@@ -1,6 +1,17 @@
 <?php
     include "./assets/scripts/php/createHeader.php";
     include "./assets/scripts/php/createFooter.php";
+
+    include("./entities/Database.class.php");
+
+    session_start();
+
+    $erro = null;
+	if(isset( $_SESSION["flash"])) {
+	    $erro = $_SESSION["flash"];
+		unset( $_SESSION["flash"]);
+	}
+
 ?>
 
 <!DOCTYPE html>
@@ -38,17 +49,19 @@
             <div class="register--container">
                 <div class="register--container--form">
                     <h1 class="register__title">Entrar</h1>
-                    <div class="register--container--user">
+
+                    <div class="register--container--error">
+                        <?php if($erro != null) echo $erro; ?>
                     </div>
 
-                    <form class="register__form" action="logar.php" method="post">
+                    <form class="register__form" action="initiateSession.php" method="post">
                         <div class="register--container--email">
                             <label class="register__label" for="email-input">Email</label>
-                            <input required class="register__input" type="email" name="emailLogin" id="email-input">
+                            <input required class="register__input" type="email" name="email" id="email-input">
                         </div>                       
                         <div class="register--container--password">
                             <label class="register__label" for="email-password">Senha</label>
-                            <input required class="register__input" type="password" name="passwordLogin" id="email-password">
+                            <input required class="register__input" type="password" name="password" id="email-password">
                         </div>   
                         <input class="button__input" type="submit" value="Entrar" id="button-input">
                         <span class="register__span">Ainda não possui uma conta? <a href="registrar.html" class="register__link">Registre-se aqui</a></span>
