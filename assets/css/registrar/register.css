@@ -9,6 +9,11 @@
     font-weight: 600;
 }
 
+.register--container--error {
+    text-align: center;
+    color: red;
+}
+
 .register--container--user {
     text-align: center;
 }
@@ -28,7 +33,7 @@
     padding: 0 9rem;
 }
 
-.register--container--email, .register--container--password, .register--container--name, .register--container--lastname, .register--container--service {
+.register--container--email, .register--container--password, .register--container--name, .register--container--lastname, .register--container--service, .register--container--error {
     margin-bottom: 2rem;
 }
 
