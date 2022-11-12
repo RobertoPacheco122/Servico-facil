@@ -1,31 +1,13 @@
 <?php
     include "./assets/scripts/php/createHeader.php";
     include "./assets/scripts/php/createFooter.php";
-    include("./entities/Database.class.php");
-    //include("./entities/Cliente.class.php");
-    include("./entities/Usuario.class.php");
+    require_once("./entities/Database.class.php");
+    require_once("./entities/Cliente.class.php");
+    require_once("./entities/Prestador.class.php");
+    require_once("./assets/scripts/php/getRegisterData.php");
 
-    function getRegisterData(){
-        $nome = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
-        $lastname = filter_input(INPUT_POST, "lastname", FILTER_SANITIZE_STRING);
-        $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_STRING);
-        $senha = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
-        $servico = $_POST["service"];
-
-        if($servico == null) {
-            $user = new Cliente($nome, $lastname, $email, $senha);
-        } else {
-            $user = new Prestador($nome, $lastname, $email, $senha);
-            $user->setTipoServico($servico);
-        }
-
-        return $user;
-    }
-
-
-    var_dump(getRegisterData());
-
-    //$db = Database::addUser(getRegistrationData());
+    $user = getRegisterData();
+    Database::insertUser($user);
 
     $email = $_POST['email'];
 
@@ -62,10 +44,6 @@
     <link rel="stylesheet" href="./assets/css/error/style.css">
 </head>
 <body>
-    <?php
-        echo createHeader();
-    ?> 
-
     <main class="main">
         <section class="error">
             <div class="error--container container-3">
