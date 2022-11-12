@@ -4,12 +4,14 @@
         private $sobrenome;
         private $email;
         private String $senha;
+        private $tipoUsuario;
 
-        public function __construct($nome, $sobrenome, $email, $senha){
+        public function __construct($nome, $sobrenome, $email, $senha, $tipoUsuario){
             $this->nome = $nome;
             $this->sobrenome = $sobrenome;
             $this->email = $email;
             $this->senha = $senha;
+            $this->tipoUsuario = $tipoUsuario;
         }
 
         public function getNome() {
@@ -24,6 +26,10 @@
         public function getSenha() {
             return $this->senha;
         }
+        public function getTipoUsuario() {
+            return intval($this->tipoUsuario);
+        }
+
 
         public function setNome($nome) {
             $this->nome = $nome;
@@ -37,5 +43,9 @@
         public function setSenha($senha) {
             $this->senha = $senha;
         }
+        public function setTipoUsuario($tipoUsuario) {
+            $this->tipoUsuario = $tipoUsuario;
+        }
+
     }
 ?>
