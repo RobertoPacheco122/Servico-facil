@@ -1,5 +1,5 @@
 <?php
-    include("./entities/Usuario.class.php");
+    require_once("./entities/Usuario.class.php");
     
     class Cliente extends Usuario {
         private $credito = 0;
