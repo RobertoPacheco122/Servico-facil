@@ -18,10 +18,6 @@
     <link type="text/css" rel="stylesheet" href="./assets/css/registrar/style.css">
 </head>
 <body>
-    <?php
-        echo createHeader();
-    ?>
-
     <main class="main">
         <section class="call">
             <div class="call--container">
@@ -92,9 +88,9 @@
                             <label for="service" class="register__label">Escolha o seu tipo de serviço</label>
                             <select title="Serviço" name="service" id="service" class="register__select">
                                 <option value="0" class="register__option">Selecione uma opção</option>
-                                <option value="1" class="register__option">Bombeiro Hidráulico</option>
-                                <option value="2" class="register__option">Marido de aluguel</option>
-                                <option value="3" class="register__option">Assasino de alguel</option>
+                                <option value="Bombeiro Hidráulico" class="register__option">Bombeiro Hidráulico</option>
+                                <option value="Marido de aluguel" class="register__option">Marido de aluguel</option>
+                                <option value="Assasino de alguel" class="register__option">Assasino de alguel</option>
                             </select>
                         </div> 
                         <div class="register--container--terms">
