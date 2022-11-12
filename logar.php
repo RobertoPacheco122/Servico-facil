@@ -29,10 +29,6 @@
     <link type="text/css" rel="stylesheet" href="./assets/css/registrar/style.css">
 </head>
 <body>
-    <?php
-        echo createHeader();
-    ?>    
-
     <main class="main">
         <section class="call">
             <div class="call--container">
@@ -64,7 +60,7 @@
                             <input required class="register__input" type="password" name="password" id="email-password">
                         </div>   
                         <input class="button__input" type="submit" value="Entrar" id="button-input">
-                        <span class="register__span">Ainda não possui uma conta? <a href="registrar.html" class="register__link">Registre-se aqui</a></span>
+                        <span class="register__span">Ainda não possui uma conta? <a href="registrar.php" class="register__link">Registre-se aqui</a></span>
                     </form>
                 </div>
             </div>
