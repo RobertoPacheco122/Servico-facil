@@ -10,7 +10,6 @@ create table Usuarios (
 	primary key (id_usuario, email)
 );
 
-/*
 create table Solicitacoes (
 	num_pedido int auto_increment primary key,
 	id_usuario_prestador int,
@@ -21,11 +20,14 @@ create table Solicitacoes (
 	data_servico varchar(10),
 	observacao varchar(120),
 	horario varchar(5),
-	preco float(10)
-)
-*/
+	preco float(4)
+);
+
 
 insert into Usuarios (nome, sobrenome, email, senha, credito, tipo_usuario) values ("Roberto", "Pacheco", "cliente1@teste.com.br", "senha123", 40.00, 1);
 insert into Usuarios (nome, sobrenome, email, senha, credito, tipo_usuario) values ("Pedro", "Landi", "cliente2@teste.com.br", "senha321", 0, 1);
 insert into Usuarios (nome, sobrenome, email, senha, tipo_servico, tipo_usuario) values ("Thiago", "Policarpo", "prestador1@teste.com.br", "senha456", "Bombeiro Hidráulico", 2);
 insert into Usuarios (nome, sobrenome, email, senha, tipo_servico, tipo_usuario) values ("Jair", "Bolsonaro", "prestador2@teste.com.br", "senha654", "Eletricista", 2);
+
+insert into Solicitacoes (id_usuario_prestador, id_usuario_tomador, condicao, servico, tipo_servico, data_servico, observacao, horario, preco) values (4, 1, "Execução", "Desentupimento", "Bombeiro Hidráulico", "21/09/2022", "Nenhuma", "14:30", 69.69);
+insert into Solicitacoes (id_usuario_prestador, id_usuario_tomador, condicao, servico, tipo_servico, data_servico, observacao, horario, preco) values (4, 1, "Pendente", "Conserto de Vazamento", "Bombeiro Hidráulico", "29/09/2022", "Nenhuma", "17:30", 89.99);
