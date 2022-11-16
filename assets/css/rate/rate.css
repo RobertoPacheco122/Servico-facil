@@ -1,0 +1,44 @@
+.rate {
+    margin: 2rem 0;
+}
+
+.rate--container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.rate__image {
+    opacity: 0.4;
+}
+
+.rate__title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.rate--container--form {
+    margin-bottom: 1rem;
+}
+
+.rate__text {
+    display: inline-block;
+}
+
+.rate__text--main {
+    font-weight: 600;
+}
+
+.rate__button {
+    padding: .8rem;
+    width: 100%;
+    background-color: var(--b1);
+    color: #FFFFFF;
+    border-radius: .4rem;
+    border: none;
+}
+
+.rate__button:hover {
+    cursor: pointer;
+}
