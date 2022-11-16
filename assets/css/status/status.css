@@ -23,8 +23,8 @@
 
 .status--container--cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
 }
 
 .status--container--card {
@@ -53,7 +53,7 @@
 }
 
 .status__title--card {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: .5rem;
 }
@@ -73,7 +73,7 @@
 
 .status__obs {
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1rem;
     display: inline-block;
     margin-bottom: .5rem;
 }
