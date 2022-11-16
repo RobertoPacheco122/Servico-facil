@@ -107,5 +107,14 @@
 
             return $query;
         }
+
+        public static function getAllSolicitations($userId){
+            $database = Database::getConnection();
+            $statement = $database->prepare("SELECT * FROM Solicitacoes WHERE id_usuario_tomador = :id_usuario_tomador");
+            $status = $statement->execute(["id_usuario_tomador" => $userId]);
+            $query = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            return $query;
+        }
     }
 ?>
