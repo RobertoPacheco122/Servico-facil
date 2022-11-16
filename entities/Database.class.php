@@ -19,7 +19,7 @@
 
         private static function addClient($user){
             $db = Database::getConnection();
-            $statement = $db->prepare("INSERT INTO Clientes (nome, sobrenome, email, senha, credito, tipo_usuario) VALUES (:nome, :sobrenome, :email, :senha, :credito, :tipo_usuario)");
+            $statement = $db->prepare("INSERT INTO Usuarios (nome, sobrenome, email, senha, credito, tipo_usuario) VALUES (:nome, :sobrenome, :email, :senha, :credito, :tipo_usuario)");
             $status = $statement->execute([
                 ":nome" => $user->getNome(), 
                 ":sobrenome" => $user->getSobrenome(), 
@@ -35,7 +35,7 @@
         private static function addProvider($user){
             $db = Database::getConnection();
 
-            $statement = $db->prepare("INSERT INTO Prestadores (nome, sobrenome, email, senha, tipo_servico, tipo_usuario) VALUES (:nome, :sobrenome, :email, :senha, :tipo_servico, :tipo_usuario)");
+            $statement = $db->prepare("INSERT INTO Usuarios (nome, sobrenome, email, senha, tipo_servico, tipo_usuario) VALUES (:nome, :sobrenome, :email, :senha, :tipo_servico, :tipo_usuario)");
             $status = $statement->execute([
                 ":nome" => $user->getNome(),
                 ":sobrenome" => $user->getSobrenome(),
@@ -50,7 +50,7 @@
 
         public static function getUserId($email, $senha){
             $database = Database::getConnection();
-            $statement = $database->prepare("SELECT id_cliente FROM Clientes WHERE email = :email AND senha = :senha");
+            $statement = $database->prepare("SELECT id_usuario FROM Usuarios WHERE email = :email AND senha = :senha");
             $statement->bindParam(":email", $email, PDO::PARAM_STR);
             $statement->bindParam(":senha", $senha, PDO::PARAM_STR);
             $status = $statement->execute();
@@ -61,8 +61,8 @@
 
         public static function getUserEmail($userId){
             $database = Database::getConnection();
-            $statement = $database->prepare("SELECT email FROM Clientes WHERE id_cliente = :id_cliente");
-            $statement->bindParam(":id_cliente", $userId, PDO::PARAM_STR);
+            $statement = $database->prepare("SELECT email FROM Usuarios WHERE id_usuario = :id_usuario");
+            $statement->bindParam(":id_usuario", $userId, PDO::PARAM_STR);
             $status = $statement->execute();
             $clientEmail = $statement->fetch();
 
@@ -71,8 +71,8 @@
 
         public static function getUserPassword($userId){
             $database = Database::getConnection();
-            $statement = $database->prepare("SELECT senha FROM Clientes WHERE id_cliente = :id_cliente");
-            $statement->bindParam(":id_cliente", $userId, PDO::PARAM_STR);
+            $statement = $database->prepare("SELECT senha FROM Usuarios WHERE id_usuario = :id_usuario");
+            $statement->bindParam(":id_usuario", $userId, PDO::PARAM_STR);
             $status = $statement->execute();
             $clientPassword = $statement->fetch();
 
@@ -81,8 +81,8 @@
 
         public static function getUserName($userId){
             $database = Database::getConnection();
-            $statement = $database->prepare("SELECT nome FROM Clientes WHERE id_cliente = :id_cliente");
-            $statement->bindParam(":id_cliente", $user, PDO::PARAM_STR);
+            $statement = $database->prepare("SELECT nome FROM Usuarios WHERE id_usuario = :id_usuario");
+            $statement->bindParam(":id_usuario", $userId, PDO::PARAM_STR);
             $status = $statement->execute();
             $clientName = $statement->fetch();
 
@@ -91,8 +91,8 @@
 
         public static function getUserLastname($userId){
             $database = Database::getConnection();
-            $statement = $database->prepare("SELECT sobrenome FROM Clientes WHERE id_cliente = :id_cliente");
-            $statement->bindParam(":id_cliente", $user, PDO::PARAM_STR);
+            $statement = $database->prepare("SELECT sobrenome FROM Usuarios WHERE id_usuario = :id_usuario");
+            $statement->bindParam(":id_usuario", $userId, PDO::PARAM_STR);
             $status = $statement->execute();
             $clientLastname = $statement->fetch();
 
@@ -101,7 +101,7 @@
 
         public static function authenticateUser($email, $senha){
             $database = Database::getConnection();
-            $statement = $database->prepare("SELECT email, senha FROM Clientes WHERE email = :email AND senha = :senha");
+            $statement = $database->prepare("SELECT email, senha FROM Usuarios WHERE email = :email AND senha = :senha");
             $status = $statement->execute([":email" => $email, ":senha" => $senha]);
             $query = $statement->fetch();
 
