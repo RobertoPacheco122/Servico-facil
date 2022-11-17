@@ -21,8 +21,8 @@
                     <div class='header--container--content'>
                         <ul class='header__list'>
                             <li class='header__item'><a href='error.php' class='header__link'>Início</a></li>
+                            <li class='header__item'><a href='servicos.php' class='header__link'>Serviços</a></li>
                             <li class='header__item'><a href='solicitacoes.php' class='header__link'>Solicitações</a></li>
-                            <li class='header__item'><a href='servicos-status.php' class='header__link'>Status</a></li>
                             $listItem
                         </ul>
                     </div>
