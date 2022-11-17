@@ -47,6 +47,7 @@
 .confirm__data {
     text-transform: uppercase;
     display: inline-block;
+    font-weight: 600;
 }
 
 .confirm__link {
