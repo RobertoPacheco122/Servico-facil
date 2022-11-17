@@ -136,5 +136,15 @@
 
             return $query;
         }
+
+        public static function getAllServices(){
+            $database = Database::getConnection();
+
+            $statement = $database->prepare("SELECT * FROM Servicos;");
+            $status = $statement->execute();
+            $query = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            return $query;
+        }
     }
 ?>
