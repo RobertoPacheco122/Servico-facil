@@ -99,6 +99,16 @@
             return $clientLastname[0];
         }
 
+        public static function getUserCredit($userId){
+            $database = Database::getConnection();
+            $statement = $database->prepare("SELECT credito FROM Usuarios WHERE id_usuario = :id_usuario");
+            $statement->bindParam(":id_usuario", $userId, PDO::PARAM_STR);
+            $status = $statement->execute();
+            $userCredit = $statement->fetch();
+
+            return $userCredit[0];
+        }
+
         public static function authenticateUser($email, $senha){
             $database = Database::getConnection();
             $statement = $database->prepare("SELECT email, senha FROM Usuarios WHERE email = :email AND senha = :senha");
@@ -113,6 +123,16 @@
             $statement = $database->prepare("SELECT * FROM Solicitacoes WHERE id_usuario_tomador = :id_usuario_tomador");
             $status = $statement->execute(["id_usuario_tomador" => $userId]);
             $query = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            return $query;
+        }
+
+        public static function getLastSolicitation($userId){
+            $database = Database::getConnection();
+
+            $statement = $database->prepare("SELECT * FROM Solicitacoes WHERE id_usuario_tomador = :id_usuario_tomador ORDER BY num_pedido DESC LIMIT 1;");
+            $status = $statement->execute([":id_usuario_tomador" => $userId]);
+            $query = $statement->fetch(PDO::FETCH_ASSOC);
 
             return $query;
         }
