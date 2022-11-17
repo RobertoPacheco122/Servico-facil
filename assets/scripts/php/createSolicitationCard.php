@@ -1,6 +1,10 @@
 <?php
 
 function createSolicitationCard($solicitation){
+    $providerName = Database::getUserName($solicitation['id_usuario_prestador']);
+    $providerLastname = Database::getUserLastname($solicitation['id_usuario_prestador']);
+    $providerEmail = Database::getUserEmail($solicitation['id_usuario_prestador']);
+
     echo "
     <div class='status--container--card'>
         <header class='status__header'>
@@ -14,13 +18,15 @@ function createSolicitationCard($solicitation){
             <p class='status__text'>Preço: R$ " . $solicitation['preco'] . "</p>
             <p class='status__text'>Data: " . $solicitation['data_servico'] . "</p>
             <p class='status__text'>Horário: " . $solicitation['horario'] . "</p>
+            <p class='status__text'>Prestador: " . $providerName . " " . $providerLastname ."</p>
+            <p class='status__text'>Email: " . $providerEmail . "</p>
         </header>
         <div class='status--container--content'>
             <div class='status--container--obs'>
                 <p class='status__obs'>Observações: " . $solicitation['observacao'] . "</p>
             </div>
             <div class='status--container--button'>
-                <!-- <a href='error.php' class='status__button'>Cancelar serviço</a> -->
+                <a href='error.php' class='status__button'>Cancelar serviço</a>
             </div>
         </div>
     </div>
