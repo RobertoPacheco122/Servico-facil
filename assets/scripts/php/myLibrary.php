@@ -185,3 +185,29 @@ function createServiceCard($service){
     </li>
     ";
 }
+
+function createServiceCall($serviceName){
+    echo "
+    <div class='call--container--content'>
+        <h1 class='call__title'>Em busca de profissionais de " . $serviceName . " ?</h1>
+        <p class='call__subtitle'>Encontre no Serviço Fácil o profissional perfeito para sua necessidade.</p>
+        <ul class='call__list'>
+            <li class='call__item'>
+                <i class='call__icon icon icon--shield'></i>
+                <p class='call__text'>Garantimos a sua segurança</p>
+            </li>
+            <li class='call__item'>
+                <i class='call__icon icon icon--star'></i>
+                <p class='call__text'>Os melhores profissionais há um clique de distância</p>
+            </li>
+            <li class='call__item'>
+                <i class='call__icon icon icon--money'></i>
+                <p class='call__text'>Preços que cabem no seu bolso</p>
+            </li>
+        </ul>
+    </div>
+    <div class='call--container--image'>
+        <img src='./assets/img/services2.jpg' alt='Homens apertando as mãos' class='call__img'>
+    </div>
+    ";
+}
