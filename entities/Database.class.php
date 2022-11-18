@@ -137,11 +137,31 @@
             return $query;
         }
 
+        public static function getServiceName($serviceId){
+            $database = Database::getConnection();
+
+            $statement = $database->prepare("SELECT nome FROM Servicos WHERE id_servico = :id_servico;");
+            $status = $statement->execute([":id_servico" => $serviceId]);
+            $query = $statement->fetch();
+
+            return $query[0];
+        }
+
         public static function getAllServices(){
             $database = Database::getConnection();
 
             $statement = $database->prepare("SELECT * FROM Servicos;");
             $status = $statement->execute();
+            $query = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            return $query;
+        }
+
+        public static function getAllTypeOfService($serviceId){
+            $database = Database::getConnection();
+
+            $statement = $database->prepare("SELECT * FROM Tipo_Servicos WHERE id_servico = :id_servico");
+            $status = $statement->execute([":id_servico" => $serviceId]);
             $query = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             return $query;
