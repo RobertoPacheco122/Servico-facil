@@ -1,6 +1,5 @@
 <?php
-    include "./assets/scripts/php/createHeader.php";
-    include "./assets/scripts/php/createFooter.php";
+    include "./assets/scripts/php/myLibrary.php";
 ?>
 
 <!DOCTYPE html>

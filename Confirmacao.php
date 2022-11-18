@@ -1,10 +1,8 @@
 <?php
-    include "./assets/scripts/php/createHeader.php";
-    include "./assets/scripts/php/createFooter.php";
-    require_once("./entities/Database.class.php");
-    require_once("./entities/Cliente.class.php");
-    require_once("./entities/Prestador.class.php");
-    require_once("./assets/scripts/php/getRegisterData.php");
+    include_once("./entities/Database.class.php");
+    include_once("./entities/Cliente.class.php");
+    include_once("./entities/Prestador.class.php");
+    include_once("./assets/scripts/php/myLibrary.php");
 
     $user = getRegisterData();
     Database::insertUser($user);

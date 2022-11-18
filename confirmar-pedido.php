@@ -1,9 +1,5 @@
 <?php
-    include "entities/Servicos.class.php";
-    include "entities/Servico.class.php";
-    include "assets/scripts/php/createHeader.php";
-    include "assets/scripts/php/createFooter.php";
-
+    include_once("./assets/scripts/php/myLibrary.php");
 ?>
 
 <!DOCTYPE html>

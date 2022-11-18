@@ -1,7 +1,5 @@
 <?php
-    include "assets/scripts/php/createHeader.php";
-    include "assets/scripts/php/createFooter.php";
-    include_once("assets/scripts/php/createSolicitationCard.php");
+    include_once("./assets/scripts/php/myLibrary.php");
     include_once("entities/Database.class.php");
 
     session_start();
