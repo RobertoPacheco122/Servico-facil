@@ -169,8 +169,19 @@ function getRegisterData(){
     return $user;
 }
 
-function showServices($services) {
-    for ($i = 0; $i < count($services); $i++) {
-        echo "<option value='$i'>".$services[$i]->getServico()."</option>";
-    }
+function createServiceCard($service){
+    echo "
+    <li class='services__item'>
+        <div class='services--card--image'>
+            <i class='services__icon icon " . $service['nome_classe'] . "'></i>
+        </div>
+        <div class='services--card--content'>
+            <form action='servicos-solicitar.php' method='post'>
+                <h2 class='services__subtitle'>" . $service['nome'] . "</h2>
+                <input type='number' name='id' value=" . "'" . $service['id_servico'] . "'" . " placeholder='id_service--db' class='hidden'>
+                <button type='submit' class='services__button'>Solicitar</button>
+            </form>
+        </div>
+    </li>
+    ";
 }
