@@ -211,3 +211,9 @@ function createServiceCall($serviceName){
     </div>
     ";
 }
+
+function createTypeOfServiceOptions($typeService){
+    echo "
+        <option value=" . "'" . $typeService['id_tipo_servico'] . "'" . "> " . $typeService['nome'] . "</option>
+    ";
+}
