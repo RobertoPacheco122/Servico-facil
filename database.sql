@@ -26,7 +26,8 @@ CREATE TABLE Solicitacoes (
 CREATE TABLE Servicos (
 	id_servico int auto_increment primary key,
 	nome varchar(50),
-	nome_classe varchar(30)
+	nome_classe varchar(30),
+	endereco varchar(50)
 );
 
 CREATE TABLE Tipo_Servicos (
@@ -37,11 +38,11 @@ CREATE TABLE Tipo_Servicos (
 );
 
 
-INSERT INTO Servicos (nome, nome_classe) VALUES ("Marcenaria", "icon--lime");
-INSERT INTO Servicos (nome, nome_classe) VALUES ("Chaveiro", "icon--keychain");
-INSERT INTO Servicos (nome, nome_classe) VALUES ("Bombeiro Hidráulico", "icon--pipe");
-INSERT INTO Servicos (nome, nome_classe) VALUES ("Eletricista", "icon--circuit");
-INSERT INTO Servicos (nome, nome_classe) VALUES ("Ar Condicionado", "icon--airconditioning");
+INSERT INTO Servicos (nome, nome_classe) VALUES ("Marcenaria", "icon--lime", "marcenaria.php");
+INSERT INTO Servicos (nome, nome_classe) VALUES ("Chaveiro", "icon--keychain", "chaveiro.php");
+INSERT INTO Servicos (nome, nome_classe) VALUES ("Bombeiro Hidráulico", "icon--pipe", "hidraulico.php");
+INSERT INTO Servicos (nome, nome_classe) VALUES ("Eletricista", "icon--circuit", "eletricista.php");
+INSERT INTO Servicos (nome, nome_classe) VALUES ("Ar Condicionado", "icon--airconditioning", "arcondicionado.php");
 
 INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (1, "Conserto de móveis de MDF", 69.69);
 INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (1, "Conserto de móveis de madeira", 99.99);
