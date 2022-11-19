@@ -119,7 +119,6 @@ function createFooter(){
         </footer>        
     ";
 }
-
 function createSolicitationCard($solicitation){
     $providerName = Database::getUserName($solicitation['id_usuario_prestador']);
     $providerLastname = Database::getUserLastname($solicitation['id_usuario_prestador']);
@@ -135,7 +134,6 @@ function createSolicitationCard($solicitation){
              </div>
             <h1 class='status__title--card'> " . $solicitation['tipo_servico'] . "</h1>
             <p class='status__text'>Serviço: " . $solicitation['servico'] . "</p>
-            <p class='status__text'>Preço: R$ " . $solicitation['preco'] . "</p>
             <p class='status__text'>Data: " . $solicitation['data_servico'] . "</p>
             <p class='status__text'>Horário: " . $solicitation['horario'] . "</p>
             <p class='status__text'>Prestador: " . $providerName . " " . $providerLastname ."</p>
