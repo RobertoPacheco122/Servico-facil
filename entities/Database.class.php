@@ -163,9 +163,17 @@
             return $query;
         }
 
+        public static function getServiceNameFromTs($typeServiceId){
+            $database = Database::getConnection();
+            $statement = $database->prepare("SELECT id_servico FROM Tipo_Servicos WHERE id_tipo_servico = :id_tipo_servico");
+            $status = $statement->execute([":id_tipo_servico" => $typeServiceId]);
+            $result = $statement->fetch();
+            
+            return Database::getServiceName($result[0]);
+        }
+
         public static function getTypeServicePrice($typeServiceId){
             $database = Database::getConnection();
-
             $statement = $database->prepare("SELECT preco FROM Tipo_Servicos WHERE id_tipo_servico = :id_tipo_servico");
             $status = $statement->execute([":id_tipo_servico" => $typeServiceId]);
             $query = $statement->fetch();
@@ -175,7 +183,6 @@
 
         public static function getTypeServiceName($typeServiceId){
             $database = Database::getConnection();
-
             $statement = $database->prepare("SELECT nome FROM Tipo_Servicos WHERE id_tipo_servico = :id_tipo_servico");
             $status = $statement->execute([":id_tipo_servico" => $typeServiceId]);
             $query = $statement->fetch();
