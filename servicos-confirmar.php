@@ -3,9 +3,17 @@
     include_once("./entities/Database.class.php");
 
     session_start();
+    $typeServiceId = $_POST['tipo_servico'];
+    $date = $_POST['data'];
+    $hour = $_POST['horario'];
 
-    $solicitation = Database::getLastSolicitation($_SESSION['userId']);
-    $userCredit = Database::getUserCredit($_SESSION['userId']);
+    $dateConvert = str_replace("-", "/", $date);
+    $typeServiceName = Database::getTypeServiceName($typeServiceId);
+    $serviceName = Database::getServiceNameFromTs($typeServiceId);
+    $tsPriceConvert = floatval(Database::getTypeServicePrice($typeServiceId));
+    $userCreditConvert = floatval(Database::getUserCredit($_SESSION['userId']));
+    $finalPrice = $tsPriceConvert - $userCreditConvert;
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +36,6 @@
         <main class="main">
             <section class="confirm">
                 <div class="confirm--container container-3">
-
                 <?php 
                     echo "
                         <div class='confirm--container--image'>
@@ -37,13 +44,19 @@
                             <p class='confirm__text'>Revise os dados antes de confirmar a solicitação.</p>
                         </div>
                         <div class='confirm--container--content'>
-                            <p class='confirm__service'><span class='confirm__data'>Serviço:</span> " . $solicitation['tipo_servico'] . "</p>
-                            <h2 class='confirm__service'><span class='confirm__data'>Tipo de serviço:</span> " . $solicitation['servico'] . " </h2>
-                            <p class='confirm__service'><span class='confirm__data'>Preço:</span> R$" . $solicitation['preco'] . "</p>
-                            <p class='confirm__service'><span class='confirm__data'>Crédito :</span> R$" . $userCredit . "</p>
-                            <p class='confirm__service'><span class='confirm__data'>Valor final:</span> R$" . $solicitation['preco'] - $userCredit . "</p>
+                            <p class='confirm__service'><span class='confirm__data'>Serviço:</span> " . $serviceName . "</p>
+                            <h2 class='confirm__service'><span class='confirm__data'>Tipo serviço:</span> " . $typeServiceName . " </h2>
+                            <p class='confirm__service'><span class='confirm__data'>Preço:</span> R$" . $tsPriceConvert . "</p>
+                            <p class='confirm__service'><span class='confirm__data'>Crédito :</span> R$" . $userCreditConvert . "</p>
+                            <p class='confirm__service'><span class='confirm__data'>Valor final:</span> R$" . $finalPrice . "</p>
         
-                            <a href='solicitacoes.php' class='confirm__link'>Confirmar pedido</a>
+                            <form action='createSolicitation.php' method='POST' class='confirm__form'>
+                                <input type='text' name='ts_id' value='$typeServiceId' id='id-ts' class='hidden'>
+                                <input type='text' name='date_converted' value='$dateConvert' id='date' class='hidden'>
+                                <input type='text' name='hour' value='$hour' id='hour' class='hidden'>
+                                <input type='number' name='final-price' value='$finalPrice' id='final-price' class='hidden'>
+                                <input type='submit' value='Confirmar solicitação' class='confirm__link'>
+                            </form>
                         </div>
                     "
                 ?>
