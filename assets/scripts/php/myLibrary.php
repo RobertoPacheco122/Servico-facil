@@ -135,7 +135,7 @@ function createSolicitationCard($solicitation){
                 <p class='status__service'>Status: " . $solicitation['condicao'] . "</p> 
              </div>
             <h1 class='status__title--card'> " . $serviceName . "</h1>
-            <p class='status__text'>Tipo Serviço: " . $typeServiceName . "</p>
+            <p class='status__text'>Serviço: " . $typeServiceName . "</p>
             <p class='status__text'>Data: " . $solicitation['data_servico'] . "</p>
             <p class='status__text'>Horário: " . $solicitation['horario'] . "</p>
             <p class='status__text'>Preço: R$" . $price . "</p>
