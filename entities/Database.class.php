@@ -129,7 +129,6 @@
 
         public static function getLastSolicitation($userId){
             $database = Database::getConnection();
-
             $statement = $database->prepare("SELECT * FROM Solicitacoes WHERE id_usuario_tomador = :id_usuario_tomador ORDER BY num_pedido DESC LIMIT 1;");
             $status = $statement->execute([":id_usuario_tomador" => $userId]);
             $query = $statement->fetch(PDO::FETCH_ASSOC);
@@ -139,7 +138,6 @@
 
         public static function getServiceName($serviceId){
             $database = Database::getConnection();
-
             $statement = $database->prepare("SELECT nome FROM Servicos WHERE id_servico = :id_servico;");
             $status = $statement->execute([":id_servico" => $serviceId]);
             $query = $statement->fetch();
@@ -149,7 +147,6 @@
 
         public static function getAllServices(){
             $database = Database::getConnection();
-
             $statement = $database->prepare("SELECT * FROM Servicos;");
             $status = $statement->execute();
             $query = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -159,12 +156,31 @@
 
         public static function getAllTypeOfService($serviceId){
             $database = Database::getConnection();
-
             $statement = $database->prepare("SELECT * FROM Tipo_Servicos WHERE id_servico = :id_servico");
             $status = $statement->execute([":id_servico" => $serviceId]);
             $query = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             return $query;
+        }
+
+        public static function getTypeServicePrice($typeServiceId){
+            $database = Database::getConnection();
+
+            $statement = $database->prepare("SELECT preco FROM Tipo_Servicos WHERE id_tipo_servico = :id_tipo_servico");
+            $status = $statement->execute([":id_tipo_servico" => $typeServiceId]);
+            $query = $statement->fetch();
+
+            return $query[0];
+        }
+
+        public static function getTypeServiceName($typeServiceId){
+            $database = Database::getConnection();
+
+            $statement = $database->prepare("SELECT nome FROM Tipo_Servicos WHERE id_tipo_servico = :id_tipo_servico");
+            $status = $statement->execute([":id_tipo_servico" => $typeServiceId]);
+            $query = $statement->fetch();
+
+            return $query[0];
         }
     }
 ?>
