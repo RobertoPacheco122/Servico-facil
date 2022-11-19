@@ -57,4 +57,10 @@
     text-decoration: none;
     color: var(--g1);
     text-align: center;
+    width: 100%;
+    border: none;
+}
+
+.confirm__link:hover {
+    cursor: pointer;
 }
