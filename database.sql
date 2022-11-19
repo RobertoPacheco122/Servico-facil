@@ -48,15 +48,15 @@ INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (1, "Conserto de móv
 INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (1, "Conserto de móveis de madeira", 99.99);
 INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (1, "Restauração de móveis antigos", 129.99);
 INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (2, "Arrombamento de porta", 119.99);
-INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (2, "Cópia de chave", 12.99);
-INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (2, "Amolar tesoura", 19.99);
-INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (3, "Roubar água da rua", 29.99);
-INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (3, "Roubar água do vizinho", 27.99);
-INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (3, "Reparo de vazamentos", 19.99);
+INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (2, "Cópia de chave", 72.99);
+INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (2, "Amolar tesoura", 89.99);
+INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (3, "Roubar água da rua", 69.99);
+INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (3, "Roubar água do vizinho", 97.99);
+INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (3, "Reparo de vazamentos", 89.99);
 INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (4, "Gato de energia", 56.99);
 INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (4, "Tigre de energia", 89.99);
 INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (4, "Instalar aterramento", 99.99);
-INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (5, "Troca de gás", 56.99);
+INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (5, "Troca de gás", 96.99);
 INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (5, "Conserto", 89.99);
 INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (5, "Limpeza", 99.99);
 
@@ -65,5 +65,5 @@ INSERT INTO Usuarios (nome, sobrenome, email, senha, credito, tipo_usuario) VALU
 INSERT INTO Usuarios (nome, sobrenome, email, senha, tipo_servico, tipo_usuario) VALUES ("Thiago", "Policarpo", "prestador1@teste.com.br", "senha456", "Eletricista", 2);
 INSERT INTO Usuarios (nome, sobrenome, email, senha, tipo_servico, tipo_usuario) VALUES ("Jair", "Bolsonaro", "prestador2@teste.com.br", "senha654", "Bombeiro Hidráulico", 2);
 
-INSERT INTO Solicitacoes (id_servico, id_tipo_servico, id_usuario_prestador, id_usuario_tomador, condicao, data_servico, observacao, horario) VALUES (3, 7, 4, 1, "Execução", "21/09/2022", "Nenhuma", "14:30");
-INSERT INTO Solicitacoes (id_servico, id_tipo_servico, id_usuario_prestador, id_usuario_tomador, condicao, data_servico, observacao, horario) VALUES (3, 9, 4, 1, "Pendente", "29/09/2022", "Nenhuma", "17:30");
+INSERT INTO Solicitacoes (id_servico, id_tipo_servico, id_usuario_prestador, id_usuario_tomador, condicao, data_servico, observacao, horario) VALUES (3, 7, 4, 1, "Execução", "2022/11/01", "Nenhuma", "14:30");
+INSERT INTO Solicitacoes (id_servico, id_tipo_servico, id_usuario_prestador, id_usuario_tomador, condicao, data_servico, observacao, horario) VALUES (3, 9, 4, 1, "Pendente", "2022/11/09", "Nenhuma", "17:30");
