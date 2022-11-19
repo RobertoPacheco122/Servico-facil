@@ -31,7 +31,7 @@
         <div class="services--container container-3">
             <h1 class="services__title">Serviços de Hidráulica</h1>
             <form action="servicos-confirmar.php" method="post" class="services__form">
-                <select title="servicos" name="servicos" id="servicos" class="services__select">
+                <select title="servicos" name="tipo_servico" id="servicos" class="services__select">
                     <option value="0">Selecione um tipo de serviço</option>
                     <?php
                         foreach($typeOfServices as $typeOfService){
