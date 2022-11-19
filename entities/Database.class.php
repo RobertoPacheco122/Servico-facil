@@ -163,11 +163,18 @@
             return $query;
         }
 
-        public static function getServiceNameFromTs($typeServiceId){
+        public static function getServiceIdFromTs($typeServiceId){
             $database = Database::getConnection();
             $statement = $database->prepare("SELECT id_servico FROM Tipo_Servicos WHERE id_tipo_servico = :id_tipo_servico");
             $status = $statement->execute([":id_tipo_servico" => $typeServiceId]);
-            $result = $statement->fetch();
+            $query = $statement->fetch();
+
+            return $query[0];
+        }
+
+        public static function getServiceNameFromTs($typeServiceId){
+            $database = Database::getConnection();
+            $result = Database::getServiceIdFromTs($typeServiceId);
             
             return Database::getServiceName($result[0]);
         }
@@ -188,6 +195,22 @@
             $query = $statement->fetch();
 
             return $query[0];
+        }
+
+        public static function insertSolicitation($solicitation){
+            $database = Database::getConnection();
+            $statement = $database->prepare("INSERT INTO Solicitacoes (id_servico, id_tipo_servico, id_usuario_prestador, id_usuario_tomador, condicao, data_servico, horario) VALUES (:id_servico, :id_tipo_servico, :id_usuario_prestador, :id_usuario_tomador, :condicao, :data_servico, :horario)");
+            $status = $statement->execute([
+                ":id_servico" => $solicitation->getIdServico(),
+                ":id_tipo_servico" => $solicitation->getIdTipoServico(),
+                ":id_usuario_prestador" => $solicitation->getIdUsuarioPrestador(),
+                ":id_usuario_tomador" => $solicitation->getIdUsuarioTomador(),
+                ":condicao" => $solicitation->getCondicao(),
+                ":data_servico" => $solicitation->getDataServico(),
+                ":horario" => $solicitation->getHorario()
+            ]);
+
+            return $status;
         }
     }
 ?>
