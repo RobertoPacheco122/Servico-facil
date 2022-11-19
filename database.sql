@@ -13,15 +13,14 @@ CREATE TABLE Usuarios (
 );
 
 CREATE TABLE Solicitacoes (
- id_tipo_servico int,
 	num_pedido int auto_increment primary key,
+	id_servico int,
+ 	id_tipo_servico int,
 	id_usuario_prestador int,
 	id_usuario_tomador int,
 	condicao varchar(30),
-	servico varchar(40),
-	tipo_servico varchar(40),
 	data_servico varchar(10),
- data_servico_conclusao varchar(10),
+ 	data_servico_conclusao varchar(10),
 	observacao varchar(120),
 	horario varchar(5)
 );
@@ -29,8 +28,7 @@ CREATE TABLE Solicitacoes (
 CREATE TABLE Servicos (
 	id_servico int auto_increment primary key,
 	nome varchar(50),
-	nome_classe varchar(30),
-	endereco varchar(50)
+	nome_classe varchar(30)
 );
 
 CREATE TABLE Tipo_Servicos (
@@ -40,11 +38,11 @@ CREATE TABLE Tipo_Servicos (
 	preco float(4)
 );
 
-INSERT INTO Servicos (nome, nome_classe, endereco) VALUES ("Marcenaria", "icon--lime", "marcenaria.php");
-INSERT INTO Servicos (nome, nome_classe, endereco) VALUES ("Chaveiro", "icon--keychain", "chaveiro.php");
-INSERT INTO Servicos (nome, nome_classe, endereco) VALUES ("Bombeiro Hidráulico", "icon--pipe", "hidraulico.php");
-INSERT INTO Servicos (nome, nome_classe, endereco) VALUES ("Eletricista", "icon--circuit", "eletricista.php");
-INSERT INTO Servicos (nome, nome_classe, endereco) VALUES ("Ar Condicionado", "icon--airconditioning", "arcondicionado.php");
+INSERT INTO Servicos (nome, nome_classe) VALUES ("Marcenaria", "icon--lime");
+INSERT INTO Servicos (nome, nome_classe) VALUES ("Chaveiro", "icon--keychain");
+INSERT INTO Servicos (nome, nome_classe) VALUES ("Bombeiro Hidráulico", "icon--pipe");
+INSERT INTO Servicos (nome, nome_classe) VALUES ("Eletricista", "icon--circuit");
+INSERT INTO Servicos (nome, nome_classe) VALUES ("Ar Condicionado", "icon--airconditioning");
 
 INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (1, "Conserto de móveis de MDF", 69.69);
 INSERT INTO Tipo_Servicos (id_servico, nome, preco) VALUES (1, "Conserto de móveis de madeira", 99.99);
@@ -67,5 +65,5 @@ INSERT INTO Usuarios (nome, sobrenome, email, senha, credito, tipo_usuario) VALU
 INSERT INTO Usuarios (nome, sobrenome, email, senha, tipo_servico, tipo_usuario) VALUES ("Thiago", "Policarpo", "prestador1@teste.com.br", "senha456", "Eletricista", 2);
 INSERT INTO Usuarios (nome, sobrenome, email, senha, tipo_servico, tipo_usuario) VALUES ("Jair", "Bolsonaro", "prestador2@teste.com.br", "senha654", "Bombeiro Hidráulico", 2);
 
-INSERT INTO Solicitacoes (id_usuario_prestador, id_usuario_tomador, condicao, servico, tipo_servico, data_servico, observacao, horario) VALUES (4, 1, "Execução", "Desentupimento", "Bombeiro Hidráulico", "21/09/2022", "Nenhuma", "14:30");
-INSERT INTO Solicitacoes (id_usuario_prestador, id_usuario_tomador, condicao, servico, tipo_servico, data_servico, observacao, horario) VALUES (4, 1, "Pendente", "Conserto de Vazamento", "Bombeiro Hidráulico", "29/09/2022", "Nenhuma", "17:30");
+INSERT INTO Solicitacoes (id_servico, id_tipo_servico, id_usuario_prestador, id_usuario_tomador, condicao, data_servico, observacao, horario) VALUES (3, 7, 4, 1, "Execução", "21/09/2022", "Nenhuma", "14:30");
+INSERT INTO Solicitacoes (id_servico, id_tipo_servico, id_usuario_prestador, id_usuario_tomador, condicao, data_servico, observacao, horario) VALUES (3, 9, 4, 1, "Pendente", "29/09/2022", "Nenhuma", "17:30");
