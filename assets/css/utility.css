@@ -3,7 +3,11 @@
     --g1: #efefef;
     --g2: rgb(197, 197, 197);
     --g3: rgb(114, 113, 113);
-
+    --canceled: #FF5F5F;
+    --pending: #90EFB4;
+    --waiting: #63D6ED;
+    --concluded: #6645D9;
+    --execution: #4F4B50;
     --font-default: 'Poppins', sans-serif;
 }
 
@@ -39,6 +43,26 @@ body {
 
 .underline {
     text-decoration: underline;
+}
+
+.canceled {
+    background-color: var(--canceled);
+}
+
+.pending {
+    background-color: var(--pending);
+}
+
+.waiting {
+    background-color: var(--waiting);
+}
+
+.concluded {
+    background-color: var(--concluded);
+}
+
+.execution {
+    background-color: var(--execution);
 }
 
 @media screen and (max-width: 1900px) {
