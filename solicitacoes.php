@@ -5,6 +5,7 @@
     session_start();
 
     $solicitations = Database::getAllSolicitations($_SESSION['userId']);
+    $userCredit = Database::getUserCredit($_SESSION['userId']);
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +27,7 @@
                 <div class="status--container container-3">
                     <h1 class="status__title">Suas solicitações</h1>
                     <h2 class="status__subtitle">Veja o status de todos as solicitações feitas por você.</h2>
+                    <span class="status__span">Seu crédito: R$<?php echo $userCredit ?></span>
                     <div class="status--container--cards">
                         <?php 
                             foreach ($solicitations as $solicitation) {
