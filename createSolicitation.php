@@ -11,12 +11,13 @@ $hour = $_POST["hour"];
 $finalPrice = $_POST["final-price"];
 
 $solicitation = new Solicitacao(
-    Database::getServiceIdFromTs($typeServiceId), $typeServiceId, 3, $_SESSION["userId"], "Pendente", $date, $hour 
+    Database::getServiceIdFromTs($typeServiceId), $typeServiceId, 3, $_SESSION["userId"], "Aguardando início", $date, $hour 
 );
 
-$queryStatus = Database::insertSolicitation($solicitation);
+$insertStatus = Database::insertSolicitation($solicitation);
 
-if($queryStatus == 1){
+if($insertStatus == 1){
+    Database::updateUserCredit($_SESSION["userId"], 0);
     header("location: solicitacao-confirmar.php");
 } else {
     header("location: error.php");
