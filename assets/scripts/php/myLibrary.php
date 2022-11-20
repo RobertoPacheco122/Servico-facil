@@ -119,6 +119,26 @@ function createFooter(){
         </footer>        
     ";
 }
+
+function createSolicitationButton($idSolicitation, $buttonValue){
+    return "
+        <form action='' method='post'> 
+            <input type='number' name='id-solicitation' value='$idSolicitation' class='hidden'>
+            <button type='submit' class='status__button'>" . $buttonValue . "</button>        
+        </form>
+    ";
+}
+
+function printSolicitationForm($solicitation){
+    if($solicitation['condicao'] === "Pendente") return createSolicitationButton($solicitation['num_pedido'], "Resolver pendências");
+
+    if($solicitation['condicao'] === "Aguardando início") return createSolicitationButton($solicitation['num_pedido'], "Cancelar");
+
+    if($solicitation['condicao'] === "Concluído") return createSolicitationButton($solicitation['num_pedido'], "Avaliar prestador");
+
+    if($solicitation['condicao'] === "Cancelado")return createSolicitationButton($solicitation['num_pedido'], "Ver motivo");
+}
+
 function createSolicitationCard($solicitation){
     $providerName = Database::getUserName($solicitation['id_usuario_prestador']);
     $providerLastname = Database::getUserLastname($solicitation['id_usuario_prestador']);
@@ -126,6 +146,7 @@ function createSolicitationCard($solicitation){
     $price = Database::getTypeServicePrice($solicitation['id_tipo_servico']);
     $typeServiceName = Database::getTypeServiceName($solicitation['id_tipo_servico']);
     $serviceName = Database::getServiceName($solicitation['id_servico']);
+
     echo "
     <div class='status--container--card'>
         <header class='status__header'>
@@ -148,8 +169,8 @@ function createSolicitationCard($solicitation){
                 <p class='status__text'>" . $solicitation['observacao'] . "</p>
             </div>
             <div class='status--container--button'>
-                <a href='error.php' class='status__button'>Cancelar serviço</a>
-            </div>
+                " . printSolicitationForm($solicitation) ."
+            </div>  
         </div>
     </div>
     ";
