@@ -81,6 +81,7 @@
 .status--container--button {
     align-self: center;
     margin: 1rem;
+    width: 100%;
 }
 
 .status__button {
@@ -91,4 +92,9 @@
     color: white;
     width: 100%;
     border-radius: 25px;
+    border: none;
+}
+
+.status__button:hover {
+    cursor: pointer;
 }
