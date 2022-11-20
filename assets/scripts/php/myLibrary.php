@@ -131,12 +131,17 @@ function createSolicitationButton($idSolicitation, $buttonValue){
 
 function printSolicitationForm($solicitation){
     if($solicitation['condicao'] === "Pendente") return createSolicitationButton($solicitation['num_pedido'], "Resolver pendências");
-
     if($solicitation['condicao'] === "Aguardando início") return createSolicitationButton($solicitation['num_pedido'], "Cancelar");
-
     if($solicitation['condicao'] === "Concluído") return createSolicitationButton($solicitation['num_pedido'], "Avaliar prestador");
+    if($solicitation['condicao'] === "Cancelado") return createSolicitationButton($solicitation['num_pedido'], "Ver motivo");
+}
 
-    if($solicitation['condicao'] === "Cancelado")return createSolicitationButton($solicitation['num_pedido'], "Ver motivo");
+function createSolicitationStatus($solicitation){
+    if($solicitation['condicao'] === "Pendente") return "<p class='status__service pending'>Status: " . $solicitation['condicao'] . "</p>";
+    if($solicitation['condicao'] === "Aguardando início") return "<p class='status__service waiting'>Status: " . $solicitation['condicao'] . "</p>";
+    if($solicitation['condicao'] === "Concluído") return "<p class='status__service concluded'>Status: " . $solicitation['condicao'] . "</p>";
+    if($solicitation['condicao'] === "Cancelado") return "<p class='status__service canceled'>Status: " . $solicitation['condicao'] . "</p>";
+    if($solicitation['condicao'] === "Execução") return "<p class='status__service execution'>Status: " . $solicitation['condicao'] . "</p>";
 }
 
 function createSolicitationCard($solicitation){
@@ -153,7 +158,7 @@ function createSolicitationCard($solicitation){
             <div class='status--container--header'>
                 <p class='status__number'>Pedido: " . $solicitation['num_pedido'] . "</p>
                 <br>
-                <p class='status__service'>Status: " . $solicitation['condicao'] . "</p> 
+                " . createSolicitationStatus($solicitation) . "
              </div>
             <h1 class='status__title--card'> " . $serviceName . "</h1>
             <p class='status__text'>Serviço: " . $typeServiceName . "</p>
