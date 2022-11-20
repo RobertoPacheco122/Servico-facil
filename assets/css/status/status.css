@@ -43,9 +43,8 @@
 }
 
 .status__service {
-    background-color: white;
     display: inline-block;
-    color: var(--b1);
+    color: #FFFFFF;
     padding: .3rem;
     border-radius: 5px;
     border: 1px solid var(--b1);
