@@ -109,6 +109,14 @@
             return $userCredit[0];
         }
 
+        public static function updateUserCredit($userId, $newValue){
+            $database = Database::getConnection();
+            $statement = $database->prepare("UPDATE Usuarios SET credito = :newValue WHERE id_usuario = :id_usuario");
+            $status = $statement->execute([":id_usuario" => $userId, ":newValue" => $newValue]);
+
+            return $status;
+        }
+
         public static function authenticateUser($email, $senha){
             $database = Database::getConnection();
             $statement = $database->prepare("SELECT email, senha FROM Usuarios WHERE email = :email AND senha = :senha");
