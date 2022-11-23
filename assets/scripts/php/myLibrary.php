@@ -148,7 +148,7 @@ function createSolicitationCard($solicitation){
     $providerName = Database::getUserName($solicitation['id_usuario_prestador']);
     $providerLastname = Database::getUserLastname($solicitation['id_usuario_prestador']);
     $providerEmail = Database::getUserEmail($solicitation['id_usuario_prestador']);
-    $price = Database::getTypeServicePrice($solicitation['id_tipo_servico']);
+    $price = Database::getSolicitationPrice($solicitation['num_pedido']);
     $typeServiceName = Database::getTypeServiceName($solicitation['id_tipo_servico']);
     $serviceName = Database::getServiceName($solicitation['id_servico']);
 
