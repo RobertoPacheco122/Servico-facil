@@ -11,9 +11,10 @@ class Solicitacao {
     private $dataServicoConclusao;
     private $observacao;
     private $horario;
+    private $preco;
 
     public function __construct($idServico, $idTipoServico, $idUsuarioPrestador, $idUsuarioTomador,
-    $condicao, $dataServico, $horario) {
+    $condicao, $dataServico, $horario, $preco) {
         $this->idServico = $idServico;
         $this->idTipoServico = $idTipoServico;
         $this->idUsuarioPrestador = $idUsuarioPrestador;
@@ -21,8 +22,9 @@ class Solicitacao {
         $this->condicao = $condicao;
         $this->dataServico = $dataServico;
         $this->horario = $horario;
+        $this->preco = $preco;
     }
-
+    
     public function getIdServico(){
         return $this->idServico;
     }
@@ -57,5 +59,9 @@ class Solicitacao {
 
     public function getHorario(){
         return $this->horario;
+    }
+
+    public function getPreco(){
+        return $this->preco;
     }
 }
