@@ -207,7 +207,7 @@
 
         public static function insertSolicitation($solicitation){
             $database = Database::getConnection();
-            $statement = $database->prepare("INSERT INTO Solicitacoes (id_servico, id_tipo_servico, id_usuario_prestador, id_usuario_tomador, condicao, data_servico, horario) VALUES (:id_servico, :id_tipo_servico, :id_usuario_prestador, :id_usuario_tomador, :condicao, :data_servico, :horario)");
+            $statement = $database->prepare("INSERT INTO Solicitacoes (id_servico, id_tipo_servico, id_usuario_prestador, id_usuario_tomador, condicao, data_servico, horario, preco) VALUES (:id_servico, :id_tipo_servico, :id_usuario_prestador, :id_usuario_tomador, :condicao, :data_servico, :horario, :preco)");
             $status = $statement->execute([
                 ":id_servico" => $solicitation->getIdServico(),
                 ":id_tipo_servico" => $solicitation->getIdTipoServico(),
@@ -215,10 +215,18 @@
                 ":id_usuario_tomador" => $solicitation->getIdUsuarioTomador(),
                 ":condicao" => $solicitation->getCondicao(),
                 ":data_servico" => $solicitation->getDataServico(),
-                ":horario" => $solicitation->getHorario()
+                ":horario" => $solicitation->getHorario(),
+                ":preco" => $solicitation->getPreco()
             ]);
-
             return $status;
+        }
+
+        public static function getSolicitationPrice($solicitationId){
+            $database = Database::getConnection();
+            $statement = $database->prepare("SELECT preco FROM Solicitacoes WHERE num_pedido = :num_pedido");
+            $status = $statement->execute([":num_pedido" => $solicitationId]);
+            $query = $statement->fetch();
+            return $query[0];
         }
     }
 ?>
