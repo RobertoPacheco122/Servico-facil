@@ -2,6 +2,9 @@
     include_once("./assets/scripts/php/myLibrary.php");
     include_once("./entities/Database.class.php");
 
+    session_start();
+
+    $userType = Database::getUserType($_SESSION['userId']);
     $services = Database::getAllServices();
 ?>
 
@@ -37,11 +40,19 @@
         </section>
         <section class="services">
             <div class="services--container container-3">
-                <h1 class="services__title">Selecione um serviço</h1>
+                <?php
+                    if($userType == 1){
+                        echo '<h1 class="services__title">Selecione um serviço</h1>';
+                    } else {
+                        echo '<h1 class="services__title">Você não tem permissão para escolher serviços</h1>';
+                    }
+                ?>
                 <ul class="services__list">
-                    <?php 
-                        foreach($services as $service){
-                            createServiceCard($service);
+                    <?php
+                        if($userType == 1){
+                            foreach($services as $service){
+                                createServiceCard($service);
+                            }
                         }
                     ?>
                 </ul>
