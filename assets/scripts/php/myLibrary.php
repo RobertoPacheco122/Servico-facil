@@ -122,18 +122,24 @@ function createFooter(){
 
 function createSolicitationButton($idSolicitation, $buttonValue){
     return "
-        <form action='' method='post'> 
+        <form action='buttonRequest.php' method='post'>
             <input type='number' name='id-solicitation' value='$idSolicitation' class='hidden'>
+            <input type='text' name='operation' value='$buttonValue' class='hidden'>
             <button type='submit' class='status__button'>" . $buttonValue . "</button>        
         </form>
     ";
 }
 
-function printSolicitationForm($solicitation){
-    if($solicitation['condicao'] === "Pendente") return createSolicitationButton($solicitation['num_pedido'], "Resolver pendências");
-    if($solicitation['condicao'] === "Aguardando início") return createSolicitationButton($solicitation['num_pedido'], "Cancelar");
-    if($solicitation['condicao'] === "Concluído") return createSolicitationButton($solicitation['num_pedido'], "Avaliar prestador");
-    if($solicitation['condicao'] === "Cancelado") return createSolicitationButton($solicitation['num_pedido'], "Ver motivo");
+function printSolicitationForm($solicitation, $userType){
+    if($userType == 1){
+        if($solicitation['condicao'] === "Pendente") return createSolicitationButton($solicitation['num_pedido'], "Resolver pendências");
+        if($solicitation['condicao'] === "Aguardando início") return createSolicitationButton($solicitation['num_pedido'], "Cancelar");
+        if($solicitation['condicao'] === "Concluído") return createSolicitationButton($solicitation['num_pedido'], "Avaliar prestador");
+        if($solicitation['condicao'] === "Cancelado") return createSolicitationButton($solicitation['num_pedido'], "Ver motivo");
+    } else {
+        if($solicitation['condicao'] === "Aguardando início") return createSolicitationButton($solicitation['num_pedido'], "Iniciar serviço");
+        if($solicitation['condicao'] === "Execução") return createSolicitationButton($solicitation['num_pedido'], "Concluir serviço");
+    }
 }
 
 function createSolicitationStatus($solicitation){
@@ -151,6 +157,7 @@ function createSolicitationCard($solicitation){
     $price = Database::getSolicitationPrice($solicitation['num_pedido']);
     $typeServiceName = Database::getTypeServiceName($solicitation['id_tipo_servico']);
     $serviceName = Database::getServiceName($solicitation['id_servico']);
+    $userType = Database::getUserType($_SESSION['userId']);
 
     echo "
     <div class='status--container--card'>
@@ -174,7 +181,7 @@ function createSolicitationCard($solicitation){
                 <p class='status__text'>" . $solicitation['observacao'] . "</p>
             </div>
             <div class='status--container--button'>
-                " . printSolicitationForm($solicitation) ."
+                " . printSolicitationForm($solicitation, $userType) ."
             </div>  
         </div>
     </div>
