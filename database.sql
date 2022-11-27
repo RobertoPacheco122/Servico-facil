@@ -24,7 +24,6 @@ CREATE TABLE Solicitacoes (
 	observacao varchar(120),
 	horario varchar(5),
 	preco float(4),
-	visivel int
 );
 
 CREATE TABLE Servicos (
@@ -67,5 +66,5 @@ INSERT INTO Usuarios (nome, sobrenome, email, senha, credito, tipo_usuario) VALU
 INSERT INTO Usuarios (nome, sobrenome, email, senha, tipo_servico, tipo_usuario) VALUES ("Thiago", "Policarpo", "prestador1@teste.com.br", "senha456", "Eletricista", 2);
 INSERT INTO Usuarios (nome, sobrenome, email, senha, tipo_servico, tipo_usuario) VALUES ("Jair", "Bolsonaro", "prestador2@teste.com.br", "senha654", "Bombeiro Hidráulico", 2);
 
-INSERT INTO Solicitacoes (id_servico, id_tipo_servico, id_usuario_prestador, id_usuario_tomador, condicao, data_servico, observacao, horario, preco) VALUES (3, 7, 4, 1, "Execução", "2022/11/01", "Nenhuma", "14:30", 75.95, 1);
-INSERT INTO Solicitacoes (id_servico, id_tipo_servico, id_usuario_prestador, id_usuario_tomador, condicao, data_servico, observacao, horario, preco) VALUES (3, 9, 4, 1, "Pendente", "2022/11/09", "Nenhuma", "17:30", 93.95, 1);
+INSERT INTO Solicitacoes (id_servico, id_tipo_servico, id_usuario_prestador, id_usuario_tomador, condicao, data_servico, observacao, horario, preco) VALUES (3, 7, 4, 1, "Execução", "2022/11/01", "Nenhuma", "14:30", 75.95);
+INSERT INTO Solicitacoes (id_servico, id_tipo_servico, id_usuario_prestador, id_usuario_tomador, condicao, data_servico, observacao, horario, preco) VALUES (3, 9, 4, 1, "Pendente", "2022/11/09", "Nenhuma", "17:30", 93.95);
