@@ -23,7 +23,7 @@ CREATE TABLE Solicitacoes (
  	data_servico_conclusao varchar(10),
 	observacao varchar(120),
 	horario varchar(5),
-	preco float(4),
+	preco float(4)
 );
 
 CREATE TABLE Servicos (
