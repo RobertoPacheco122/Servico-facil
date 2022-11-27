@@ -1,5 +1,12 @@
 <?php
     include "./assets/scripts/php/myLibrary.php";
+    include_once("./entities/Database.class.php");
+
+    session_start();
+
+    $userCredit = Database::getUserCredit($_SESSION['userId']);
+    $userCredit += 10;
+    Database::updateUserCredit($_SESSION['userId'], $userCredit);
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +31,7 @@
                 </div>
                 <div class="rate--container--content">
                     <h1 class="rate__title">Avalie o prestador</h1>
-                    <form action="servicos-status.php" method="POST" class="rate__form">
+                    <form action="servicos.php" method="POST" class="rate__form">
                         <div class="rate--container--form">
                             <p class="rate__text rate__text--main">Tipo de serviço:</p>
                             <p class="rate__text">Bombeiro Hidráulico</p>
