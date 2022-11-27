@@ -33,16 +33,12 @@
                             if($userType == 1){
                                 $solicitationsUser = Database::getAllSolicitations($_SESSION['userId']);
                                 foreach ($solicitationsUser as $solicitation) {
-                                    if($solicitation['visivel'] == 1){
-                                        createSolicitationCard($solicitation);
-                                    }
+                                    createSolicitationCard($solicitation);
                                 }
                             } else {
                                 $solicitationsProvider = Database::getAllProviderSolicitations($_SESSION['userId']);
                                 foreach ($solicitationsProvider as $solicitation) {
-                                    if($solicitation['visivel'] == 1){
-                                        createSolicitationCard($solicitation);
-                                    }
+                                    createSolicitationCard($solicitation);
                                 }
                             }
                             
