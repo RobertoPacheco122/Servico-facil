@@ -4,8 +4,8 @@
 
     session_start();
 
-    $solicitations = Database::getAllSolicitations($_SESSION['userId']);
     $userCredit = Database::getUserCredit($_SESSION['userId']);
+    $userType = Database::getUserType($_SESSION['userId']);
 ?>
 
 <!DOCTYPE html>
@@ -29,10 +29,23 @@
                     <h2 class="status__subtitle">Veja o status de todos as solicitações feitas por você.</h2>
                     <span class="status__span">Seu crédito: R$<?php echo $userCredit ?></span>
                     <div class="status--container--cards">
-                        <?php 
-                            foreach ($solicitations as $solicitation) {
-                                createSolicitationCard($solicitation);
+                        <?php
+                            if($userType == 1){
+                                $solicitationsUser = Database::getAllSolicitations($_SESSION['userId']);
+                                foreach ($solicitationsUser as $solicitation) {
+                                    if($solicitation['visivel'] == 1){
+                                        createSolicitationCard($solicitation);
+                                    }
+                                }
+                            } else {
+                                $solicitationsProvider = Database::getAllProviderSolicitations($_SESSION['userId']);
+                                foreach ($solicitationsProvider as $solicitation) {
+                                    if($solicitation['visivel'] == 1){
+                                        createSolicitationCard($solicitation);
+                                    }
+                                }
                             }
+                            
                         ?>
                     </div>
                 </div>
