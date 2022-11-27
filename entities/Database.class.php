@@ -109,6 +109,16 @@
             return $userCredit[0];
         }
 
+        public static function getUserType($userId){
+            $database = Database::getConnection();
+            $statement = $database->prepare("SELECT tipo_usuario FROM Usuarios WHERE id_usuario = :id_usuario");
+            $statement->bindParam(":id_usuario", $userId, PDO::PARAM_STR);
+            $status = $statement->execute();
+            $userType = $statement->fetch();
+
+            return $userType[0];
+        }
+
         public static function updateUserCredit($userId, $newValue){
             $database = Database::getConnection();
             $statement = $database->prepare("UPDATE Usuarios SET credito = :newValue WHERE id_usuario = :id_usuario");
@@ -130,6 +140,15 @@
             $database = Database::getConnection();
             $statement = $database->prepare("SELECT * FROM Solicitacoes WHERE id_usuario_tomador = :id_usuario_tomador");
             $status = $statement->execute(["id_usuario_tomador" => $userId]);
+            $query = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            return $query;
+        }
+
+        public static function getAllProviderSolicitations($userId){
+            $database = Database::getConnection();
+            $statement = $database->prepare("SELECT * FROM Solicitacoes WHERE id_usuario_prestador = :id_usuario_prestador");
+            $status = $statement->execute(["id_usuario_prestador" => $userId]);
             $query = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             return $query;
@@ -227,6 +246,22 @@
             $status = $statement->execute([":num_pedido" => $solicitationId]);
             $query = $statement->fetch();
             return $query[0];
+        }
+
+        public static function updateSolicitationView($solicitationId, $newValue){
+            $database = Database::getConnection();
+            $statement = $database->prepare("UPDATE Solicitacoes SET visivel = :newValue WHERE num_pedido = :num_pedido");
+            $status = $statement->execute([":num_pedido" => $solicitationId, ":newValue" => $newValue]);
+
+            return $status;
+        }
+
+        public static function updateSolicitationStatus($solicitationId, $newStatus){
+            $database = Database::getConnection();
+            $statement = $database->prepare("UPDATE Solicitacoes SET condicao = :newStatus WHERE num_pedido = :num_pedido");
+            $status = $statement->execute([":num_pedido" => $solicitationId, ":newStatus" => $newStatus]);
+
+            return $status;
         }
     }
 ?>
